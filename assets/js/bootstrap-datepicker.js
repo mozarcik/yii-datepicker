@@ -940,14 +940,11 @@
 		},
 
 		_toggle_multidate: function(date){
-            if (this.o.multidate === false || this.o.multidate <= 1)
-                return;
-            
-			var ix = this.dates.contains(date);
+            var ix = this.dates.contains(date);
 			if (!date){
 				this.dates.clear();
 			}
-			else if (ix !== -1){
+			else if (ix !== -1 && (this.o.multidate === true || this.o.multidate > 1)){
 				this.dates.remove(ix);
 			}
 			else {
