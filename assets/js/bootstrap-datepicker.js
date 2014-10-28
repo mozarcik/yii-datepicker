@@ -940,6 +940,9 @@
 		},
 
 		_toggle_multidate: function(date){
+            if (this.o.multidate === false || this.o.multidate <= 1)
+                return;
+            
 			var ix = this.dates.contains(date);
 			if (!date){
 				this.dates.clear();
